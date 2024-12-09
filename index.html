@@ -1,0 +1,406 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Hub</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('https://via.placeholder.com/1500x1000') no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 15px 0;
+        z-index: 999;
+      }
+
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #ffc107;
+      }
+
+      .navbar-brand span {
+        color: white;
+      }
+
+      section {
+        padding: 50px 20px;
+        text-align: center;
+      }
+
+      .hero-section {
+        padding: 150px 20px;
+        background: rgba(0, 0, 0, 0.8);
+        text-shadow: 2px 2px 5px black;
+      }
+
+      .hero-section h1 {
+        font-size: 4rem;
+        font-family: 'Dancing Script', cursive;
+        animation: fadeIn 2s ease-in-out infinite alternate;
+      }
+
+      .hero-section p {
+        font-size: 1.5rem;
+        animation: fadeIn 2s ease;
+        animation-delay: 0.5s;
+      }
+
+      .option-card {
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 15px;
+        margin: 20px 0;
+        padding: 20px;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .option-card:hover {
+        transform: scale(1.1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+      }
+
+      .option-card i {
+        font-size: 3rem;
+        color: #ffc107;
+      }
+
+      /* General Styling */
+.news-section {
+  background: linear-gradient(45deg, #1e293b, #334155);
+  padding: 50px 0;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+}
+
+.news-section h2 {
+  font-size: 2.5rem;
+  color: #facc15;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.news-section .news-card {
+  background: #1f2937;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.news-section .news-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.news-section .news-card i {
+  font-size: 2.5rem;
+  color: #facc15;
+  margin-bottom: 15px;
+}
+
+.news-section .news-card h4 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #facc15;
+}
+
+.news-section .news-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+.news-section .btn {
+  margin-top: 15px;
+  background: #facc15;
+  color: #1f2937;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.news-section .btn:hover {
+  background: #1f2937;
+  color: #facc15;
+  border: 1px solid #facc15;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .news-card {
+    margin-bottom: 20px;
+  }
+
+  .news-section h2 {
+    font-size: 2rem;
+  }
+
+  .news-section p {
+    font-size: 0.8rem;
+  }
+}
+
+      footer {
+        background: rgba(0, 0, 0, 0.8);
+        padding: 20px 0;
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      footer a {
+        color: #ffc107;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes bounce {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+   <header class="sticky-top">
+      <div class="container d-flex justify-content-between align-items-center">
+        <a href="#" class="navbar-brand">
+          <i class="fas fa-shield-alt"></i> FOOTBALL <span>HUB</span>
+        </a>
+
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#hero">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#matches">Matches</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#features">Features</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                  News
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Transfer News</a></li>
+                  <li><a class="dropdown-item" href="#">Upcoming Matches</a></li>
+                  <li><a class="dropdown-item" href="#">Player Highlights</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#stats">Stats</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section text-white text-center">
+      <h1>Welcome to Football Hub</h1>
+      <p>Your ultimate platform for live streams, news, updates, and more.</p>
+    </section>
+
+    <!-- Matches Section -->
+    <section id="matches" class="matches-section">
+      <div class="container">
+        <h2 class="text-white">Today's Matches</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="option-card">
+              <i class="fas fa-futbol"></i>
+              <h4>Valencia vs Barcelona</h4>
+              <p>Time: 8:00 PM</p>
+              <a href="#" class="btn btn-warning">Watch Live</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="option-card">
+              <i class="fas fa-futbol"></i>
+   <h4>Liverpool vs Everton</h4>
+              <p>Time: 8:30 PM</p>
+              <a href="#" class="btn btn-warning">Watch Live</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="option-card">
+              <i class="fas fa-futbol"></i>
+   <h4>WestHam vs Wolves</h4>
+              <p>Time: 9:00 PM</p>
+              <a href="#" class="btn btn-warning">Watch Live</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="option-card">
+              <i class="fas fa-futbol"></i>
+   <h4>Myanmar vs Indonesia</h4>
+              <p>Time: 13:30 PM</p>
+              <a href="#" class="btn btn-warning">Watch Live</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="option-card">
+              <i class="fas fa-futbol"></i>
+
+              <h4>AC Milan vs Torino</h4>
+              <p>Time: 10:00 PM</p>
+              <a href="#" class="btn btn-warning">Watch Live</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+      <div class="container">
+        <h2 class="text-white">Features</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="option-card">
+              <i class="fas fa-video"></i>
+              <h4>Live Streams</h4>
+              <p>Watch high-quality streams for all matches.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="option-card">
+              <i class="fas fa-chart-bar"></i>
+              <h4>Live Stats</h4>
+              <p>Stay updated with real-time match statistics.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="option-card">
+              <i class="fas fa-user"></i>
+              <h4>Player Highlights</h4>
+              <p>Check out star performances every week.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News Section -->
+<section id="news" class="news-section">
+  <div class="container">
+    <h2 class="text-white text-center mb-5">Latest News</h2>
+    <div class="row">
+      <!-- Transfer News -->
+      <div class="col-md-4">
+        <div class="news-card">
+          <i class="fas fa-newspaper"></i>
+          <h4>Transfer News</h4>
+          <p>Breaking: Top clubs fight for new talent.</p>
+          <p>Norris becomes a McLaren Legend; Hamilton ends Mercedes era in style.</p>
+          <p>Carlo Ancelotti insists Kylian Mbappe can improve ahead of vital clash with Atl.</p>
+          <p>Lookman, Wissa, Mbeumo, and Williams shine with goals in Europe.</p>
+          <a href="#" class="btn btn-warning">Read More</a>
+        </div>
+      </div>
+
+      <!-- Upcoming Matches -->
+      <div class="col-md-4">
+        <div class="news-card">
+          <i class="fas fa-flag"></i>
+          <h4>Upcoming Matches</h4>
+          <p>Check the schedule for the next week.</p>
+          <a href="#" class="btn btn-warning">Read More</a>
+        </div>
+      </div>
+
+      <!-- Player of the Week -->
+      <div class="col-md-4">
+        <div class="news-card">
+          <i class="fas fa-star"></i>
+          <h4>Player of the Week</h4>
+          <p>Highlighting the top performance.</p>
+          <a href="#" class="btn btn-warning">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <!-- Contact Section -->
+<section id="contact" class="contact-section text-white py-5" >
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold" style="font-size: 2.5rem;">Contact Us</h2>
+      <p class="text-light">We’d love to hear from you! Drop us a message below.</p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <form action="mailto:footballliveads@gmail.com" method="POST" enctype="text/plain" class="p-4 rounded" >
+          <div class="mb-4">
+            <label for="name" class="form-label text-light"><i>Your Name</i></label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" >
+          </div>
+          <div class="mb-4">
+            <label for="email" class="form-label text-light"><i>Your Email</i></label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required >
+          </div>
+          <div class="mb-4">
+            <label for="message" class="form-label text-light"><i>Your Message</i></label>
+            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Type your message" required ></textarea>
+          </div>
+          <button type="submit" class="btn btn-warning w-100 py-2" style="font-size: 1.1rem;"><i>Send Message</i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- Footer -->
+    <footer>
+  <p>© 2024 Football Live. All Rights Reserved, Designed By <i>Noonie</i></p>
+  <p>
+    <a href="https://twitter.com/footballhubx" target="_blank" class="text-white me-3">
+      <i class="fab fa-twitter"></i> Twitter
+    </a>
+    <a href="https://instagram.com/tvfootballhub" target="_blank" class="text-white me-3">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+    <a href="https://whatsapp.com/channel/0029VahEHS92v1Io0U3zCL0U" target="_blank" class="text-white">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+  </p>
+</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
